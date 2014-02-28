@@ -1,0 +1,8 @@
+$a=Get-content #text file location with computer names (1 per line)
+
+foreach ($computername in $a)
+{
+    #fill out desination path beyond c$ to where the final location is going to be removing the ... from the end of it
+    #also change the file location of the file to be copied from <file path>
+    Copy-Item <file path> -Destination "\\$computername\c$\..."
+}
